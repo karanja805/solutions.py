@@ -1,0 +1,59 @@
+# 1. Reverse Digits of an Integer
+def reverse_integer(n):
+    """
+    Reverses the digits of an integer.
+    Example: 50 becomes 5, -12 becomes -21
+    """
+    sign = -1 if n < 0 else 1
+    reversed_n = int(str(abs(n))[::-1])
+    return sign * reversed_n
+
+# 2. Recursive Factorial Function
+def factorial(n):
+    """
+    Calculates the factorial of a number using recursion.
+    Example: factorial(5) returns 120
+    """
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+# 3. Most Frequent Character
+def most_frequent_char(s):
+    """
+    Returns the character that appears most frequently in the string.
+    Example: 'hello' returns 'l'
+    """
+    from collections import Counter
+    count = Counter(s)
+    return count.most_common(1)[0][0]
+
+# 4. Pangram Check
+def is_pangram(s):
+    """
+    Determines if a given string is a pangram.
+    Example: "The quick brown fox jumps over the lazy dog" returns True
+    """
+    alphabet = set('abcdefghijklmnopqrstuvwxyz')
+    return alphabet <= set(s.lower())
+
+# 5. Consecutive Threes
+def has_consecutive_threes(lst):
+    """
+    Returns True if the list contains two consecutive threes.
+    Example: [1, 3, 3] returns True, [1, 3, 1, 3] returns False
+    """
+    for i in range(len(lst) - 1):
+        if lst[i] == 3 and lst[i + 1] == 3:
+            return True
+    return False
+
+# 6. Yoda Sentence
+def yoda_sentence(sentence):
+    """
+    Returns a sentence with the words reversed in the same order that Master Yoda would use.
+    Example: "I am home" becomes "home am I"
+    """
+    words = sentence.split()
+    return ' '.join(words[::-1])
